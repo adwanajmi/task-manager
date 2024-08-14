@@ -1,64 +1,115 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Task Manager Application
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Overview
 
-## About Laravel
+This project is a task management application built using Laravel and integrated with the **Black Dashboard** preset for a sleek and modern design. The application allows users to add, view, update, delete, and sort tasks, making it a convenient tool for managing daily tasks.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Features
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+-   **Task Listing:** View a list of all tasks with their status.
+-   **Add a Task:** Create new tasks with a title and description.
+-   **Task Details:** View the details of individual tasks.
+-   **Mark Task as Completed:** Easily update the task status to completed.
+-   **Edit a Task:** Modify existing tasks' details and status.
+-   **Delete a Task:** Remove tasks from the list.
+-   **Sort Tasks:** Sort tasks by title or completion status.
+-   **Responsive Design:** The application is mobile-friendly and adapts to different screen sizes.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Prerequisites
 
-## Learning Laravel
+To run this project, ensure you have the following installed on your local machine:
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+-   **Apache, PHP, and MySQL:** You can use the following guides based on your operating system:
+    -   [Windows](https://updivision.com/blog/post/beginner-s-guide-to-setting-up-your-local-development-environment-on-windows)
+    -   [Linux](https://howtoubuntu.org/how-to-install-lamp-on-ubuntu)
+    -   [Mac](https://wpshout.com/quick-guides/how-to-install-mamp-on-your-mac)
+-   **Composer:** [Get Composer](https://getcomposer.org/doc/00-intro.md)
+-   **Laravel:** [Install Laravel](https://laravel.com/docs/9.x/installation)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Installation
 
-## Laravel Sponsors
+Follow the steps below to set up and run the project on your local machine:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+### 1. Clone the Repository
 
-### Premium Partners
+```bash
+git clone https://github.com/<username>/<repository-name>.git
+cd <repository-name>
+```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+### 2. Install Dependencies
 
-## Contributing
+```bash
+composer install
+npm install
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 3. Configure Environment
 
-## Code of Conduct
+1. Copy the `.env.example` file to `.env`:
+    ```bash
+    cp .env.example .env
+    ```
+2. Generate an application key:
+    ```bash
+    php artisan key:generate
+    ```
+3. Update the `.env` file with your database credentials.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### 4. Install the Black Dashboard Preset
 
-## Security Vulnerabilities
+1. Install the preset via Composer:
+    ```bash
+    composer require laravel-frontend-presets/black-dashboard
+    ```
+2. Run the preset installation command:
+    ```bash
+    php artisan ui black
+    ```
+3. Run migrations and seed the database:
+    ```bash
+    php artisan migrate --seed
+    ```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### 5. Compile Assets
+
+```bash
+npm run dev
+```
+
+### 6. Run the Application
+
+Start the local development server:
+
+```bash
+php artisan serve
+```
+
+Visit [http://localhost:8000](http://localhost:8000) to view the application.
+
+## Usage
+
+-   **Navigate to the Dashboard:** Visit the homepage to view the task listing.
+-   **Add a New Task:** Click the "Add New Task" button and fill out the form.
+-   **Edit or Delete Tasks:** Use the "Edit" or "Delete" buttons in the task listing.
+-   **Sort Tasks:** Click the table headers to sort tasks by title or completion status.
+
+## Version Control
+
+This project uses Git for version control. Make sure to commit your changes and push them to the GitHub repository.
+
+```bash
+git add .
+git commit -m "Your commit message"
+git push origin main
+```
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+-   [Laravel](https://laravel.com/) - The web framework used
+-   [Black Dashboard](https://www.creative-tim.com/product/black-dashboard) - The UI theme integrated into the application
+-   [Laravel UI](https://github.com/laravel/ui) - The official UI scaffolding for Laravel
